@@ -33,7 +33,13 @@ app.get('/health', async (req: Request, res: Response) => {
   }
 });
 
+app.use('/api/v1/users', userRouter);
 app.use('/api/v1/stalls', stallRouter);
+app.use('/api/v1/menu-items', menuItemRouter);
+app.use('/api/v1/reviews', reviewRouter);
+app.use('/api/v1/likes', likeRouter);
+app.use('/api/v1/flags', flagRouter);
+app.use('/api/v1/audit-logs', auditLogRouter);
 
 app.listen(PORT, () => {
   console.log(`Server berjalan di http://localhost:${PORT}`);
